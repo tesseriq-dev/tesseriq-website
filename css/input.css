@@ -26,3 +26,20 @@
     @apply text-brand-outline text-sm md:text-base mt-2;
   }
 }
+
+@layer utilities {
+  .animate-float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-float-mid {
+    animation: float 5s ease-in-out infinite 1s;
+  }
+  .animate-float-fast {
+    animation: float 4s ease-in-out infinite 2s;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
