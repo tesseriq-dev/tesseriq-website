@@ -1,0 +1,12 @@
+{
+  "name": "tesseriq-website",
+  "version": "1.0.0",
+  "description": "Marketing website for Tesseriq — logistics coordination platform for Indian trucking middlemen",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch",
+    "build": "npx tailwindcss -i ./css/input.css -o ./css/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
