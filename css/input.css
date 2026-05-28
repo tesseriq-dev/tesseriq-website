@@ -37,6 +37,13 @@
   .animate-float-fast {
     animation: float 4s ease-in-out infinite 2s;
   }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @keyframes float {
