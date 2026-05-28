@@ -1,3 +1,38 @@
+// Value props carousel (mobile only)
+const carousel = document.getElementById('value-carousel');
+const dots = document.getElementById('carousel-dots');
+if (carousel && dots) {
+  const items = [
+    { icon: '⏱️', bg: 'bg-brand-green/15', title: 'Save 2+ hrs/day', sub: 'No more phone juggling' },
+    { icon: '📋', bg: 'bg-brand-orange/15', title: 'Zero paperwork', sub: 'Everything digital' },
+    { icon: '💯', bg: 'bg-blue-500/15', title: '100% visibility', sub: 'Track every payment' }
+  ];
+  let current = 0;
+  setInterval(() => {
+    current = (current + 1) % items.length;
+    const item = items[current];
+    carousel.style.opacity = '0';
+    carousel.style.transform = 'translateY(8px)';
+    setTimeout(() => {
+      carousel.innerHTML = `<div class="value-slide flex items-center gap-2">
+        <div class="w-8 h-8 ${item.bg} rounded-full flex items-center justify-center text-sm">${item.icon}</div>
+        <div class="text-left">
+          <div class="text-white text-xs font-bold">${item.title}</div>
+          <div class="text-white/40 text-[10px]">${item.sub}</div>
+        </div>
+      </div>`;
+      carousel.style.opacity = '1';
+      carousel.style.transform = 'translateY(0)';
+    }, 300);
+    // Update dots
+    dots.querySelectorAll('div').forEach((dot, i) => {
+      dot.className = i === current
+        ? 'w-2 h-2 rounded-full bg-brand-orange transition-all duration-300'
+        : 'w-2 h-2 rounded-full bg-white/20 transition-all duration-300';
+    });
+  }, 2500);
+}
+
 // Mobile menu toggle with smooth animation
 const menuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
