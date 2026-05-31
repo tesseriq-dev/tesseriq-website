@@ -44,10 +44,12 @@ if (menuBtn && mobileMenu) {
     if (isOpen) {
       mobileMenu.style.maxHeight = '0px';
       mobileMenu.style.opacity = '0';
+      mobileMenu.classList.add('pointer-events-none');
       menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
     } else {
       mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
       mobileMenu.style.opacity = '1';
+      mobileMenu.classList.remove('pointer-events-none');
       menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
     }
   });
